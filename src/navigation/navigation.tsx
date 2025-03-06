@@ -3,11 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Home from '../screens/Home/Home.screen';
+import Home from '../screens/Home/HomeScreen';
 import Login from '../screens/Login';
 import Profile from '../screens/Profile/Profile.screen';
 import Splash from '../screens/Splash';
 import Transaction from '../screens/Transaction';
+import HomeScreen from '../screens/Home/HomeScreen';
+import Dashboard from '../screens/Dashboard';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,22 +55,24 @@ const MainNavigation = () => {
           options={{ headerShown: false }}
           component={Login}
         />
+          <Stack.Screen
+          name="Dashboard"
+          options={{ headerShown: false }}
+          component={Dashboard}
+        />
            <Stack.Screen
           name="Home"
           options={{ headerShown: false }}
-          component={Home}
+          component={HomeScreen}
         />
          <Stack.Screen
           name="Transaction"
           options={{ headerShown: false }}
           component={Transaction}
         />
+       
         
-        <Stack.Screen
-          name="HomeBase"
-          options={{ headerShown: false }}
-          component={MyTabs}
-        />
+      
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>
     </NavigationContainer>

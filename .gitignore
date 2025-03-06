@@ -65,4 +65,4 @@ buck-out/
 .env
 .env_prod
 .env_staging
-codePushPrivateKey.pem
+codePushPrivateKey.pem 
